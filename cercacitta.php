@@ -3,12 +3,6 @@ include("config.php"); //Necessario per la connessione al db
 
 $cerca = $_POST['cerca']; //Dato acquisito tramite POST da index.php
 
-/* 
-    Query di ricerca nel database, restituisce una vista sui dati da visualizzare nelle card dei città.
-    Nella clausola where verifica che l'email sia dell'utente corretto (che ha venduto il libro) e che la parola chiave di ricerca sia quella inserita.
-    Nella clausola select sono inseriti anche gli id per permettere di inviarli tramite richiesta GET ai file php email ed insert
-*/
-
 $sql = "SELECT id, nome, descrizione, immagine, info
         FROM citta
         WHERE nome='$cerca'";
